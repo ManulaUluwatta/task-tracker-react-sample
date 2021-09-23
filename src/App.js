@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="container mx-auto px-4 box-border border-2 mt-5 space-y-2 p-2 flex-row">
-      <Header showTask={setAddTask}/>
+      <Header onAdd={()=> setAddTask(!showAddTask)} showAddTask={showAddTask}/>
       {showAddTask && <AddTask onAdd={addTask}/>}
       {tasks.length > 0 ? <Tasks tasks={tasks} onClick={deleteTasks} toggleTask={toggleTask} /> : 'No Task to show'}
     </div>
